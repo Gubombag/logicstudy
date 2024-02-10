@@ -18,6 +18,11 @@ export const SubContainer = styled.div`
     justify-content: center;
 `
 
-export const Paragraph = styled.p`
+export const ButtonAdd = styled.button`
     
+`
+
+export const ButtonCheck = styled.button`
+    width: 30px;
+    height: 30px;
 `

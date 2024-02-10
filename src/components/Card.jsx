@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Container, SubContainer, Paragraph} from "./styles.ts"
+import {Container, SubContainer, ButtonAdd, ButtonCheck} from "./styles.ts"
 
 const Card = () => {
 
@@ -13,27 +13,35 @@ const Card = () => {
             if(todo.id === selectedTodo.id) {
                 return{
                     ...todos,
-                    done: !selectedTodo
-                }    
+                    done: !selectedTodo.done
+                }
             }
-            return todo
+            return todos
         }))
     }
 
-    const handleAdd = (newTodo) => {
-        setTodos([...todos, {
-            id: todos.length + 1,
-            title: newTodo,
-            done: false
-        }])
+    const handdleAdd = (newTodo) => {
+        setTodos([
+            ...todos,
+            {
+                id: todos.length + 1,
+                title: newTodo,
+                done: false
+            }
+        ])
     }
 
     return(
         <Container>
             <SubContainer>
-                <Paragraph>
-                    Oi
-                </Paragraph>
+                <ButtonAdd
+                    onAdd={handleAdd}
+                >
+                    Adicionar
+                </ButtonAdd>
+                <ButtonCheck
+                    onToggle={handleToggle}
+                />
             </SubContainer>
         </Container>
     )
