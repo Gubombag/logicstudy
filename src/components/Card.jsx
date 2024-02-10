@@ -20,7 +20,7 @@ const Card = () => {
         }))
     }
 
-    const handdleAdd = (newTodo) => {
+    const handleAdd = (newTodo) => {
         setTodos([
             ...todos,
             {
